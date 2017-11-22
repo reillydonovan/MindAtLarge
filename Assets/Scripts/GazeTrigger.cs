@@ -35,8 +35,6 @@ public class GazeTrigger : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-
-
         //Ray ray = myCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         //RaycastHit hit;
         //Physics.Raycast(ray,)
@@ -53,7 +51,7 @@ public class GazeTrigger : MonoBehaviour
             GazeReceiver gr = hit.transform.gameObject.GetComponent<GazeReceiver>();
             if(gr)
             {
-                gr.ReceiveGaze();
+                gr.ReceiveGaze(hit);
             }
         }
     }
