@@ -11,6 +11,7 @@ ModelImporter:
     3300000: //RootNode
     4300000: Table
     4300002: TableSubDivided
+    4300004: TableBevel
   externalObjects:
   - first:
       type: UnityEngine:Material

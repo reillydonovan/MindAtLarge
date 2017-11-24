@@ -63,6 +63,7 @@
 			fixed yScrollValue = _ScrollYSpeed * _Time;
 
 			scrolledUV += fixed2(xScrollValue, yScrollValue);
+			scrollNM += fixed2(xScrollValue, yScrollValue);
 			//normalMap += fixed2(xScrollValue, yScrollValue);
 
 			//fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
