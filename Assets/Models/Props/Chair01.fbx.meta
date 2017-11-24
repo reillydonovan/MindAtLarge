@@ -6,17 +6,87 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: BookShelf
+    100004: BookShelfSubdivided
+    100006: Camera
+    100008: Chair01
+    100010: ChairForExport
+    100012: ChairMirrored
+    100014: ChairSubDivided
+    100016: Cube.001
+    100018: Lamp
+    100020: Table
+    100022: TableSubDivided
+    100024: Vase
+    100026: VaseWithModifier
     400000: //RootNode
+    400002: BookShelf
+    400004: BookShelfSubdivided
+    400006: Camera
+    400008: Chair01
+    400010: ChairForExport
+    400012: ChairMirrored
+    400014: ChairSubDivided
+    400016: Cube.001
+    400018: Lamp
+    400020: Table
+    400022: TableSubDivided
+    400024: Vase
+    400026: VaseWithModifier
+    2000000: Camera
     2300000: //RootNode
+    2300002: BookShelf
+    2300004: BookShelfSubdivided
+    2300006: Chair01
+    2300008: ChairForExport
+    2300010: ChairMirrored
+    2300012: ChairSubDivided
+    2300014: Cube.001
+    2300016: Table
+    2300018: TableSubDivided
+    2300020: Vase
+    2300022: VaseWithModifier
     3300000: //RootNode
+    3300002: BookShelf
+    3300004: BookShelfSubdivided
+    3300006: Chair01
+    3300008: ChairForExport
+    3300010: ChairMirrored
+    3300012: ChairSubDivided
+    3300014: Cube.001
+    3300016: Table
+    3300018: TableSubDivided
+    3300020: Vase
+    3300022: VaseWithModifier
     4300000: Cube
     4300002: ChairForExport
+    4300004: ChairMirrored
+    4300006: BookShelfSubdivided
+    4300008: ChairSubDivided
+    4300010: TableSubDivided
+    4300012: BookShelf
+    4300014: Chair01
+    4300016: VaseWithModifier
+    4300018: Vase
+    4300020: Cube.001
+    4300022: Table
+    10800000: Lamp
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 9243696d910bc0f4cb25ca52616a5449, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: PlasterSeamless
     second: {fileID: 2100000, guid: 2d4d6ca72d4747e4393f7104cc853750, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TerraCottaSeamless
+    second: {fileID: 2100000, guid: bf989c38b47c249449235d2a9878b35f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
