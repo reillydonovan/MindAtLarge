@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-class GazeAudioTrigger : GazeReceiver
+class GazeAudioReceiver : GazeReceiver
 {
     public AudioClip clip;
     private AudioSource source;
@@ -20,7 +20,7 @@ class GazeAudioTrigger : GazeReceiver
 
     protected override void GazeDelayTriggerOnce(RaycastHit hit)
     {
-        Debug.Log("running your stupid code");
+        Debug.Log("playing audio");
         source.clip = clip;
         source.Play();
     }

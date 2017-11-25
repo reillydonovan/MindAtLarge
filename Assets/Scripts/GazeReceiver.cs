@@ -14,15 +14,23 @@ public class GazeReceiver : MonoBehaviour
     private bool entryTriggered = false;
     private RaycastHit? hit = null;
 
+    private bool UpdateCalled = true;
 
     public void ReceiveGaze(RaycastHit hit)
     {
+        if (!UpdateCalled)
+        {
+            Debug.LogError("GazeReciever base-class update not called! Make sure subclass overrides call the base-class implementation!");
+        }
         gazedOn = true;
         this.hit = hit;
+        UpdateCalled = false;
     }
 
     public void Update()
     {
+        UpdateCalled = true;
+        Debug.Log(name);
         if (gazedOn == true && this.hit.HasValue)
         {
             if (!entryTriggered)

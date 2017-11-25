@@ -6,7 +6,6 @@ public class GazeTrigger : MonoBehaviour
 {
     public float tickDownTime = 5.0f;
 
-
     private Camera myCam;
     private Transform hmdHead = null;
 
@@ -29,6 +28,7 @@ public class GazeTrigger : MonoBehaviour
     // Use this for initialization
 	void Start ()
     {
+
         myCam = GetComponent<Camera>();
     }
 	
@@ -52,6 +52,7 @@ public class GazeTrigger : MonoBehaviour
             if(gr)
             {
                 gr.ReceiveGaze(hit);
+
             }
         }
     }
