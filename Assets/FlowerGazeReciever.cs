@@ -8,21 +8,34 @@ public class FlowerGazeReciever : GazeReceiver {
 
     void Start ()
     {
-		
-	}
+        
+        myMaterial = GetComponent<MeshRenderer>().materials[1];
+        
+        if(myMaterial == null)
+        {
+            Debug.LogError("We got a problem");
+        }
+    }
 
     protected override void GazeEntryTriggerOnce(RaycastHit hit)
     {
-        Debug.Log("FlowerGazeReciever GazeEntryTriggerOnce");
     }
 
     protected override void GazeDelayTriggerOnce(RaycastHit hit)
     {
-        Debug.Log("FlowerGazeReciever GazeDelayTriggerOnce");
     }
 
     protected override void GazeUpdate(RaycastHit hit)
     {
-        Debug.Log("FlowerGazeReciever GazeUpdate");
+        string propName = "_Factor";
+        if (myMaterial.HasProperty(propName))
+        {
+            float modulator = 0.1f*Mathf.Sin(Time.time * 4.0f);
+            myMaterial.SetFloat(propName, modulator);
+        }
+        else
+        {
+            Debug.Log("Material missing \"" + propName + "\"property");
+        }
     }
 }

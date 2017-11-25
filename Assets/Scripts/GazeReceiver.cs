@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider))]
 public class GazeReceiver : MonoBehaviour
 {
     public float delaySeconds = 1.0f;
@@ -30,7 +31,6 @@ public class GazeReceiver : MonoBehaviour
     public void Update()
     {
         UpdateCalled = true;
-        Debug.Log(name);
         if (gazedOn == true && this.hit.HasValue)
         {
             if (!entryTriggered)
@@ -47,8 +47,9 @@ public class GazeReceiver : MonoBehaviour
                     delayTriggered = true;
                     GazeDelayTriggerOnce(this.hit.Value);
                 }
-                GazeUpdate(this.hit.Value);
+               
             }
+            GazeUpdate(this.hit.Value);
         }
         else
         {
