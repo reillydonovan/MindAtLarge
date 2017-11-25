@@ -17,7 +17,8 @@ public class cubeGen : MonoBehaviour {
         if(curT < 0)
         {
             curT = updateT;
-            GameObject.Instantiate(template,transform);
+            //GameObject.Instantiate(template,transform);
+            GameObject.Instantiate(template, transform.position, transform.rotation, transform);                
         }
     }
 }
