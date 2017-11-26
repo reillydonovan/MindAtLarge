@@ -30,8 +30,9 @@ public class FlowerGazeReciever : GazeReceiver {
         string propName = "_Factor";
         if (myMaterial.HasProperty(propName))
         {
-            float modulator = 0.1f*Mathf.Sin(Time.time * 4.0f);
+            float modulator = 0.1f*Mathf.Sin(Time.time * 0.25f);
             myMaterial.SetFloat(propName, modulator);
+            myMaterial.SetTextureOffset("_HeightMap", new Vector2(0.1f*Time.time, 0.1f * Time.time));
         }
         else
         {

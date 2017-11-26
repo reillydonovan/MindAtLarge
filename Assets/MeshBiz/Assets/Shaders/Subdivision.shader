@@ -1,8 +1,9 @@
-﻿Shader "Custom/Geometry/Extrude2"
+﻿Shader "Custom/Geometry/Subdivision"
 {
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+		_HeightMap("HeightMap", 2D) = "white" {}
         _Factor ("Factor", Range(-.1, .1)) = 0.2
     }
     SubShader
@@ -25,6 +26,7 @@
                 float4 vertex : POSITION;
                 float3 normal : NORMAL;
                 float2 uv : TEXCOORD0;
+				float2 huv : TEXCOORD1;
             };
  
             struct g2f
@@ -36,12 +38,16 @@
  
             sampler2D _MainTex;
             float4 _MainTex_ST;
-           
-            v2g vert (appdata_base v)
+
+			sampler2D _HeightMap;
+			float4 _HeightMap_ST;
+
+            v2g vert (appdata_full v)
             {
                 v2g o;
                 o.vertex = v.vertex;
                 o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
+				o.huv = TRANSFORM_TEX(v.texcoord1, _HeightMap);
                 o.normal = v.normal;
                 return o;
             }
@@ -81,37 +87,49 @@
 				float3 edgeB = IN[2].vertex - IN[0].vertex;
 				float3 normalFace = normalize(cross(edgeA, edgeB));
 
+				float2 huvMid = IN[0].huv + IN[1].huv + IN[2].huv;
+				huvMid /= 3.;
+				fixed4 ht = tex2Dlod(_HeightMap, float4(huvMid.x, huvMid.y, 0, 0));
+
 				float4 mid = IN[0].vertex + IN[1].vertex + IN[2].vertex;
 				mid /= 3.;
-				mid = mid + float4(normalFace, 0) * _Factor;
+				mid = mid + float4(normalFace, 0) * _Factor * ht[0];
 
 				float2 uvMid = IN[0].uv + IN[1].uv + IN[2].uv;
 				uvMid /= 3.;
+
 				v2g tri1[3];
 				tri1[0].vertex = IN[0].vertex;
+				tri1[0].huv = IN[0].huv;
 				tri1[0].uv = IN[0].uv;
 				tri1[1].vertex = IN[1].vertex;
 				tri1[1].uv = IN[1].uv;
+				tri1[1].huv = IN[1].huv;
 				tri1[2].vertex = mid;
 				tri1[2].uv = uvMid;
+				tri1[2].huv = huvMid;
+
 				v2g tri2[3];
 				tri2[0].vertex = IN[1].vertex;
 				tri2[0].uv = IN[1].uv;
+				tri2[0].huv = IN[1].huv;
 				tri2[1].vertex = IN[2].vertex;
 				tri2[1].uv = IN[2].uv;
+				tri2[1].huv = IN[2].huv;
 				tri2[2].vertex = mid;
 				tri2[2].uv = uvMid;
+				tri2[2].huv = huvMid;
 
 				v2g tri3[3];
 				tri3[0].vertex = IN[2].vertex;
 				tri3[0].uv = IN[2].uv;
+				tri3[0].huv = IN[2].huv;
 				tri3[1].vertex = IN[0].vertex;
 				tri3[1].uv = IN[0].uv;
+				tri3[1].huv = IN[0].huv;
 				tri3[2].vertex = mid;
 				tri3[2].uv = uvMid;
-
-				g2f outVert;
-				//tri 1
+				tri3[2].huv = huvMid;
 
 				addTri(tristream, tri1);
 				addTri(tristream, tri2);
@@ -123,80 +141,104 @@
 				float3 edgeB = IN[2].vertex - IN[0].vertex;
 				float3 normalFace = normalize(cross(edgeA, edgeB));
 
+				float2 huvMid = IN[0].huv + IN[1].huv + IN[2].huv;
+				huvMid /= 3.;
+				fixed4 ht = tex2Dlod(_HeightMap, float4(huvMid.x, huvMid.y, 0, 0));
+
 				float4 mid = IN[0].vertex + IN[1].vertex + IN[2].vertex;
 				mid /= 3.;
-				mid = mid + float4(normalFace, 0) * _Factor;
+				mid = mid + float4(normalFace, 0) * _Factor * ht[0];
 
 				float2 uvMid = IN[0].uv + IN[1].uv + IN[2].uv;
 				uvMid /= 3.;
 
 				v2g tri1[3];
 				tri1[0].vertex = IN[0].vertex;
+				tri1[0].huv = IN[0].huv;
 				tri1[0].uv = IN[0].uv;
 				tri1[1].vertex = IN[1].vertex;
 				tri1[1].uv = IN[1].uv;
+				tri1[1].huv = IN[1].huv;
 				tri1[2].vertex = mid;
 				tri1[2].uv = uvMid;
+				tri1[2].huv = huvMid;
 
 				v2g tri2[3];
 				tri2[0].vertex = IN[1].vertex;
 				tri2[0].uv = IN[1].uv;
+				tri2[0].huv = IN[1].huv;
 				tri2[1].vertex = IN[2].vertex;
 				tri2[1].uv = IN[2].uv;
+				tri2[1].huv = IN[2].huv;
 				tri2[2].vertex = mid;
 				tri2[2].uv = uvMid;
+				tri2[2].huv = huvMid;
 
 				v2g tri3[3];
 				tri3[0].vertex = IN[2].vertex;
 				tri3[0].uv = IN[2].uv;
+				tri3[0].huv = IN[2].huv;
 				tri3[1].vertex = IN[0].vertex;
 				tri3[1].uv = IN[0].uv;
+				tri3[1].huv = IN[0].huv;
 				tri3[2].vertex = mid;
 				tri3[2].uv = uvMid;
+				tri3[2].huv = huvMid;
 
-				//addTri(tristream, tri1);
-				//addTri(tristream, tri2);
-				//addTri(tristream, tri3);
 				methFinal(tri1, tristream);
 				methFinal(tri2, tristream);
 				methFinal(tri3, tristream);
 			}
+
             void meth1( v2g IN[3], inout TriangleStream<g2f> tristream)
 			{
 				float3 edgeA = IN[1].vertex - IN[0].vertex;
                 float3 edgeB = IN[2].vertex - IN[0].vertex;
                 float3 normalFace = normalize(cross(edgeA, edgeB));
 
+				float2 huvMid = IN[0].huv + IN[1].huv + IN[2].huv;
+				huvMid /= 3.;
+				fixed4 ht = tex2Dlod(_HeightMap, float4(huvMid.x, huvMid.y, 0, 0));
+				
                 float4 mid = IN[0].vertex + IN[1].vertex + IN[2].vertex;
                 mid /= 3.;
-                mid = mid + float4(normalFace, 0) * _Factor;
+				mid = mid + float4(normalFace, 0) * _Factor * ht[0];
 
-                float2 uvMid = IN[0].uv + IN[1].uv + IN[2].uv;
-                uvMid /= 3.;
-
+				float2 uvMid = IN[0].uv + IN[1].uv + IN[2].uv;
+				uvMid /= 3.;
+               
 				v2g tri1[3];
 				tri1[0].vertex = IN[0].vertex;
+				tri1[0].huv = IN[0].huv;
 				tri1[0].uv     = IN[0].uv;
 				tri1[1].vertex = IN[1].vertex;
 				tri1[1].uv     = IN[1].uv;
+				tri1[1].huv    = IN[1].huv;
 				tri1[2].vertex = mid;
 				tri1[2].uv     = uvMid;
+				tri1[2].huv = huvMid;
 				 
 				v2g tri2[3];
 				tri2[0].vertex = IN[1].vertex;
 				tri2[0].uv     = IN[1].uv;
+				tri2[0].huv = IN[1].huv;
 				tri2[1].vertex = IN[2].vertex;
-				tri2[1].uv     = IN[2].uv;
+				tri2[1].uv = IN[2].uv;
+				tri2[1].huv = IN[2].huv;
 				tri2[2].vertex = mid;
-				tri2[2].uv     = uvMid;
+				tri2[2].uv = uvMid;
+				tri2[2].huv = huvMid;
 
 				v2g tri3[3];
 				tri3[0].vertex = IN[2].vertex;
-				tri3[0].uv     = IN[2].uv;
+				tri3[0].uv = IN[2].uv;
+				tri3[0].huv = IN[2].huv;
 				tri3[1].vertex = IN[0].vertex;
-				tri3[1].uv     = IN[0].uv;
+				tri3[1].uv = IN[0].uv;
+				tri3[1].huv = IN[0].huv;
 				tri3[2].vertex = mid;
-				tri3[2].uv     = uvMid;
+				tri3[2].uv = uvMid;
+				tri3[2].huv = huvMid;
 
 				//addTri(tristream, tri1);
 				//addTri(tristream, tri2);
