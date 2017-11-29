@@ -13,6 +13,7 @@ public class GazeReceiver : MonoBehaviour
     private bool gazedOn = false;
     private bool delayTriggered = false;
     private bool entryTriggered = false;
+    private bool exitTriggered = false;
     private RaycastHit? hit = null;
 
     private bool UpdateCalled = true;
@@ -26,6 +27,7 @@ public class GazeReceiver : MonoBehaviour
         gazedOn = true;
         this.hit = hit;
         UpdateCalled = false;
+        exitTriggered = false;
     }
 
     public void Update()
@@ -51,8 +53,13 @@ public class GazeReceiver : MonoBehaviour
             }
             GazeUpdate(this.hit.Value);
         }
-        else
+        else //GazeExit
         {
+            if(!exitTriggered)
+            {
+                GazeExit();
+                exitTriggered = true;
+            }
             gazeRemainingTickDown = delaySeconds;
             delayTriggered = false;
             entryTriggered = false;
@@ -74,6 +81,11 @@ public class GazeReceiver : MonoBehaviour
     protected virtual void GazeUpdate(RaycastHit hit)
     {
         Debug.Log("GazeUpdate");
+    }
+
+    protected virtual void GazeExit()
+    {
+        Debug.Log("GazeExit");
     }
 
     public void OnDrawGizmos()
