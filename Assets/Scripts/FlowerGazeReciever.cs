@@ -33,7 +33,7 @@ public class FlowerGazeReciever : GazeReceiver {
         if (isGazedOn)
         { currentFactor = Mathf.Min(currentFactor + factorDelta * Time.deltaTime, maxFaxtor); }
         else
-        { currentFactor = Mathf.Max(currentFactor - factorDelta * Time.deltaTime, 0); }
+        { currentFactor = Mathf.Max(currentFactor - 2*factorDelta * Time.deltaTime, 0); }
 
         setFactorProp(currentFactor);
 

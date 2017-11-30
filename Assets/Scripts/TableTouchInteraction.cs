@@ -14,8 +14,27 @@ public class TableTouchInteraction : MonoBehaviour {
 		
 	}
 
-    public void pubMeth()
+    private void OnCollisionEnter(Collision collision)
     {
+        printCollider(collision);
+        
+    }
 
+    private void OnCollisionStay(Collision collision)
+    {
+        foreach (ContactPoint contact in collision.contacts)
+        {
+            Debug.DrawLine(contact.point, contact.point - contact.normal * 5);
+            // Debug.DrawRay(contact.point, contact.normal*5, Color.white);
+            Mesh m = GetComponent<Mesh>();
+           // m.ge
+        }
+
+
+    }
+
+    void printCollider(Collision collision)
+    {
+        Debug.Log("name: " + collision.gameObject.name + " " + collision.GetType() );
     }
 }
