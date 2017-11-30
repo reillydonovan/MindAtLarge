@@ -5,30 +5,60 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RemoteAudioTrigger
+public class RemoteAudioTrigger: MonoBehaviour
 {
-    public String Host = "10.0.0.9";
+    public String Host = "192.168.1.112";
     public Int32 Port = 9999;
-    private string CurrentTrack = "";
-    private float CurrentVolume = 0.0f;
+    private string CurrentTrack = null;
+    private float CurrentVolume = -1.0f;
 
+    private TcpClient socket;
+    private NetworkStream stream;
+    private StreamWriter writer;
 
-    public RemoteAudioTrigger()
+    public void Start()
     {
-        //todo add init details
+        Debug.Log("Initializing socket stream and writer " + Host + " : " + Port);
+        socket = new TcpClient(Host, Port);
+        stream = socket.GetStream();
+        writer = new StreamWriter(stream);
+        Debug.Log("....Done Initializing");
     }
+
+    public void Update()
+    {
+        
+    }
+
+    private void printme()
+    {
+        Debug.Log(" socket: " + socket.ToString() + " stream: "  + stream.ToString() + " writer: " + writer.ToString());
+        Debug.Log("CurrentTrack: " + CurrentTrack + " CurrentVolume: " + CurrentVolume + " Host: " + Host + " Port: " + Port);
+
+    }               
 
     private void SendData(string trackName, float volumelevel)
     {
+        if(String.IsNullOrEmpty(trackName) || volumelevel < 0 )
+        { Debug.LogError("Attempting to send invalid trackname or volume!"); return; }
+        printme();
         try
         {
+            socket = new TcpClient(Host, Port);
+            stream = socket.GetStream();
+            writer = new StreamWriter(stream);
+
             //Should these be initilaized once or everytime we send a message?
-            TcpClient socket = new TcpClient(Host, Port);
-            NetworkStream stream = socket.GetStream();
-            StreamWriter writer = new StreamWriter(stream);
+
             //writer.Write("monteverdi/0.8");
-            writer.Write( trackName + "/"+ volumelevel );
+            string writeString = "" + trackName + "/" + volumelevel;
+            Debug.Log("sending track: " + trackName + " at volume: " + volumelevel + " to " + Host + " : " + Port + "\n  writeString: " + writeString);
+            writer.Write( writeString);
             writer.Flush();
+            stream.Close();
+            writer.Close();
+
+            socket.Close();
         }
         catch (Exception e)
         { Debug.Log("Socket error:" + e); }
@@ -58,4 +88,13 @@ public class RemoteAudioTrigger
         //todo
     }
 
+
+    public void OnDestroy()
+    {
+        Debug.Log("Remote Audio Trigger OnDestroy");
+        stream.Close();
+        writer.Close();
+        socket.Close();
+
+    }
 }

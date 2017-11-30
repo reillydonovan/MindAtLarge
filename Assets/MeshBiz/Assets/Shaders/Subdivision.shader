@@ -4,7 +4,7 @@
     {
         _MainTex ("Texture", 2D) = "white" {}
 		_HeightMap("HeightMap", 2D) = "white" {}
-        _Factor ("Factor", Range(-.1, .1)) = 0.2
+        _Factor ("Factor", Range(-.8, .8)) = 0.2
     }
     SubShader
     {

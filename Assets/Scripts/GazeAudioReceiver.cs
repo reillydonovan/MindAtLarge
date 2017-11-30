@@ -7,7 +7,7 @@ class GazeAudioReceiver : GazeReceiver
 {
     public AudioClip clip;
     private AudioSource source;
-    private RemoteAudioTrigger remoteAudioTrigger = new RemoteAudioTrigger();
+
 
     private void Start()
     {

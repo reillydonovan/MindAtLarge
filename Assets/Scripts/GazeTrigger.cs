@@ -6,7 +6,7 @@ public class GazeTrigger : MonoBehaviour
 {
     public float tickDownTime = 5.0f;
 
-    private Camera myCam;
+//private Camera myCam;
     private Transform hmdHead = null;
 
     void findHead()
@@ -29,7 +29,7 @@ public class GazeTrigger : MonoBehaviour
 	void Start ()
     {
 
-        myCam = GetComponent<Camera>();
+       // myCam = GetComponent<Camera>();
     }
 	
 	// Update is called once per frame
