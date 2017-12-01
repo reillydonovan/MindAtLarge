@@ -16,7 +16,7 @@ public class TableTouchInteraction : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        printCollider(collision);
+       // printCollider(collision);
         
     }
 
@@ -25,6 +25,8 @@ public class TableTouchInteraction : MonoBehaviour {
         foreach (ContactPoint contact in collision.contacts)
         {
             Debug.DrawLine(contact.point, contact.point - contact.normal * 5);
+            Ray r = new Ray(contact.point - contact.normal, contact.normal);
+            //Physics.Raycast()
             // Debug.DrawRay(contact.point, contact.normal*5, Color.white);
             Mesh m = GetComponent<Mesh>();
            // m.ge
