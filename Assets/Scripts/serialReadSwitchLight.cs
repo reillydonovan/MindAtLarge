@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class serialReadSwitchLight : MonoBehaviour {
 
+	//"COM3" will change depending on which USB port Arduino is using
 	SerialPort stream = new SerialPort("COM3", 9600);
 	private Light nightLight;
 
