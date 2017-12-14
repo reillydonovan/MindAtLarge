@@ -6,13 +6,14 @@ using UnityEngine;
 
 public class serialReadSwitchLight : MonoBehaviour {
 
-	SerialPort stream = new SerialPort("COM3", 9600);
-	private Light nightLight;
+    [SerializeField] string PortNameString = "COM3";
+    SerialPort stream;
+    public RemoteLightSwitch LightSwitch;
 
 	void Start () {
-		stream.ReadTimeout = 50;  // ms
+        stream = new SerialPort(PortNameString, 9600);
+        stream.ReadTimeout = 50;  // ms
 		stream.Open();
-		nightLight = GetComponent<Light>();
 	}
 
 	void Update () {
@@ -24,14 +25,8 @@ public class serialReadSwitchLight : MonoBehaviour {
 			// return value;
 			int state = int.Parse(value);
 
-			if(state == 1)
-			{
-				nightLight.enabled = true;
-			}
-			else if(state == 0)
-			{
-				nightLight.enabled = false;
-			}
+            bool isOn = (state == 1);
+            LightSwitch.lightsOn = isOn;
 		}
 		catch (TimeoutException)
 		{
