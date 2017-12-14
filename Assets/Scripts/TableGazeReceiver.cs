@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TableGazeReceiver : GazeReceiver
 {
-    public RemoteAudioTrigger Audiotrigger;
+    public RemoteAudioTriggerUdp Audiotrigger;
 
     public float MaxVolume = 1.0f;
     public float StartingVolume = 0.0f;
