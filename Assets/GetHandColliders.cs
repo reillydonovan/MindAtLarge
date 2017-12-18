@@ -3,28 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Leap.Unity.Interaction;
-public class GetHandColliders : MonoBehaviour {
+public class GetHandColliders : MonoBehaviour
+{
+    //what is the point of gettors/settors/accessors in c sharp???
     private List<CapsuleCollider> capsules;
     public List<CapsuleCollider> Capsules { private set { capsules = value; } get { return capsules; } }
+
 	void Start()
     {
-		
-	}
-	
-
+        capsules = new List<CapsuleCollider>();
+    }
 
 	void Update()
     {
-        capsules = new List<CapsuleCollider>();
 		//search scene for 'hands'
         foreach (GameObject go in gameObject.scene.GetRootGameObjects() )
         {
             foreach (ContactBone cb in go.GetComponentsInChildren<ContactBone>())
             {
-                //ContactBone cb = go.GetComponentInChildren<ContactBone>();
                 CapsuleCollider cc = cb.gameObject.GetComponent<CapsuleCollider>();
                 if(cc!=null)
-                    capsules.Add(cc);
+                    if(!capsules.Contains(cc))
+                        capsules.Add(cc);
             }
         }
         if(capsules.Count > 0)
