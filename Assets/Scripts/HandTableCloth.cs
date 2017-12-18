@@ -31,17 +31,10 @@ public class HandTableCloth : MonoBehaviour
     private void Handcolliders_newCollidersHandler(GetHandColliders sender, List<CapsuleCollider> newColliders)
     {
         Debug.Log("got collides!");
-
-        currentColliders.AddRange(newColliders);
+        currentColliders.InsertRange(0, newColliders);
+        //currentColliders.AddRange(newColliders);
         myCloth.capsuleColliders = currentColliders.ToArray();
-        //List <CapsuleCollider> allColliders = new List<CapsuleCollider>();
-        //if (tableColliders.Count > 0)
-        //    allColliders.InsertRange(0, tableColliders);
-        //if (handcolliders.Capsules != null && handcolliders.Capsules.Count > 0)
-        //    allColliders.InsertRange(0, handcolliders.Capsules);
 
-        //if (allColliders.Count > 0)
-        //    myCloth.capsuleColliders = allColliders.ToArray();
     }
 
     // Update is called once per frame

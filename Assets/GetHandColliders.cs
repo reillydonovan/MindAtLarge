@@ -27,10 +27,13 @@ public class GetHandColliders : MonoBehaviour
         {
             foreach (ContactBone cb in go.GetComponentsInChildren<ContactBone>())
             {
-                CapsuleCollider cc = cb.gameObject.GetComponent<CapsuleCollider>();
-                if(cc!=null)
-                    if(!capsules.Contains(cc))
-                        newCapsules.Add(cc);
+                if (cb.metacarpalJoint == null)
+                { 
+                    CapsuleCollider cc = cb.gameObject.GetComponent<CapsuleCollider>();
+                    if (cc != null)
+                        if (!capsules.Contains(cc))
+                            newCapsules.Add(cc);
+                }
             }
         }
         if(newCapsules.Count > 0)
