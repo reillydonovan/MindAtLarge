@@ -12,7 +12,7 @@ public class TableGazeReceiver : GazeReceiver
 
     private float currentVolume = 0.0f;
     private float lastVolume = 0.0f;
-    private float volumeUpdateDelta = 0.1f;
+    //private float volumeUpdateDelta = 0.1f;
     private float lastVolumeTime = 0.0f;
     private float volumeTimeDelta = 0.2f;
     private bool isGazedOn = false;
@@ -23,7 +23,7 @@ public class TableGazeReceiver : GazeReceiver
         currentVolume = StartingVolume;
     }
 
-    void Update()
+    new void Update()
     {
         base.Update();
         float volumeDelta = (MaxVolume / RampUpTime) * Time.deltaTime;

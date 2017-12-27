@@ -25,10 +25,10 @@ public class TableTouchInteraction : MonoBehaviour {
         foreach (ContactPoint contact in collision.contacts)
         {
             Debug.DrawLine(contact.point, contact.point - contact.normal * 5);
-            Ray r = new Ray(contact.point - contact.normal, contact.normal);
+            //Ray r = new Ray(contact.point - contact.normal, contact.normal);
             //Physics.Raycast()
             // Debug.DrawRay(contact.point, contact.normal*5, Color.white);
-            Mesh m = GetComponent<Mesh>();
+           // Mesh m = GetComponent<Mesh>();
            // m.ge
         }
 

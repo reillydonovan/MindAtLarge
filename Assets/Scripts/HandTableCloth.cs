@@ -20,7 +20,6 @@ public class HandTableCloth : MonoBehaviour
 
     void addAllTableColliders()
     {
-        List<CapsuleCollider> tableColliders = new List<CapsuleCollider>();
         foreach (CapsuleCollider cc in gameObject.GetComponentsInChildren<CapsuleCollider>())
         {
             currentColliders.Add(cc);

@@ -25,7 +25,7 @@ public class FlowerGazeReciever : GazeReceiver {
         }
     }
 
-    private void Update()
+    new private void Update()   
     {
         base.Update();
 

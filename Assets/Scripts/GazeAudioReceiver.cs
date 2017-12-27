@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 class GazeAudioReceiver : GazeReceiver
 {
-    public AudioClip clip;
+    public AudioClip clip = null;
     private AudioSource source;
 
 

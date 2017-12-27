@@ -8,7 +8,7 @@ public class GazeReceiver : MonoBehaviour
     public float delaySeconds = 1.0f;
 
     private float gazeRemainingTickDown = 999.0f;
-    private float gazeStartTime = -1;
+    //private float gazeStartTime = -1;
 
     private bool gazedOn = false;
     private bool delayTriggered = false;
