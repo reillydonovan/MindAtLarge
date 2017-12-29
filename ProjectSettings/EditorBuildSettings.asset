@@ -5,6 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MindAtLarge.unity
     guid: 39b3f7bc1d893644ebff3c940ab89aed
+  - enabled: 1
+    path: Assets/Scenes/MindAtLargeSm.unity
+    guid: d34c2421b7fff9d478a09915e0a57064
