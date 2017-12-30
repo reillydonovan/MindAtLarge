@@ -4,10 +4,22 @@ using UnityEngine;
 
 public class RemoteLightSwitch : MonoBehaviour
 {
-    public bool lightsOn = false;
+    [SerializeField] private bool lightsOn = false;
+    
+    public void setLightsOn(bool isOn)
+    {
+        if(isOn != lightsOn)
+        {
+            updateProbes();
+        }
+        lightsOn = isOn;
+    }
 
     public GameObject onLightParent;
     public GameObject offLightParent;
+
+    public GameObject ReflectionProbeParent;
+
 
     void Start ()
     {
@@ -38,5 +50,13 @@ public class RemoteLightSwitch : MonoBehaviour
     void GetLightStatusFromArduino()
     {
         //TODO: get physical arduino light status
+    }
+
+    void updateProbes()
+    {
+        foreach(ReflectionProbe probe in ReflectionProbeParent.GetComponentsInChildren<ReflectionProbe>())
+        {
+            probe.RenderProbe();
+        }
     }
 }

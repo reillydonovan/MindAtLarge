@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class serialReadSwitchLight : MonoBehaviour
 {
 
@@ -19,7 +20,7 @@ public class serialReadSwitchLight : MonoBehaviour
 
 	void Update ()
     {
-        LightSwitch.lightsOn = switchReader.isOn;
+        LightSwitch.setLightsOn(switchReader.isOn);
 	}
 
     private void OnDestroy()
