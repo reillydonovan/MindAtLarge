@@ -57,9 +57,6 @@ public class SphericalHarmonicsModellerAdvanced : MonoBehaviour
 
     void buildAndAssignVertsAndUVs(ref Mesh m)
     {
-
-        
-        Debug.Log("buildAndAssignVertsAndUVs!");
         // build arrays of vectors holding the vertex data - uvs, phi/theta, xyz
         Vector3[] vectors = new Vector3[phiDivs * thetaDivs];
         Vector2[] uvs = new Vector2[phiDivs * thetaDivs];
@@ -100,7 +97,6 @@ public class SphericalHarmonicsModellerAdvanced : MonoBehaviour
 
     void triangulateMesh(ref Mesh m)
     {
-        Debug.Log("Triangulating the mesh!");
         //assign triangles - these take the form of 'triangle strips' wrapping the
         // circumference of the sphere
         //there is room to optimise this by not recalculating/reassigning if the 
