@@ -28,7 +28,9 @@ namespace Leap.Unity {
     }
 
     public ProfilerSample(string sampleName, UnityEngine.Object obj) {
-      Profiler.BeginSample(sampleName, obj);
+            if(obj == null)
+            { UnityEngine.Debug.LogError("obj == null"); }
+            Profiler.BeginSample(sampleName, obj);
     }
 
     public void Dispose() {
