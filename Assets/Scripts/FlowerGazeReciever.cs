@@ -17,7 +17,7 @@ public class FlowerGazeReciever : GazeReceiver {
     
     void Start ()
     {
-        myMaterial = GetComponent<MeshRenderer>().materials[1];
+        myMaterial = GetComponent<SkinnedMeshRenderer>().materials[1];
         
         if(myMaterial == null)
         {
@@ -55,7 +55,6 @@ public class FlowerGazeReciever : GazeReceiver {
         string factorPropName = "_Factor";
         if (myMaterial.HasProperty(factorPropName))
         {
-           
             myMaterial.SetFloat(factorPropName, factor);
         }
     }

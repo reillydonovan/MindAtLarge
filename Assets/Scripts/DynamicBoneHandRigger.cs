@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DynamicBoneHandRigger : MonoBehaviour {
     private List<DynamicBoneColliderBase> colliders;
-    public DynamicBone boneRoot;
+    public DynamicBone[] boneRoots;
 
     // Use this for initialization
     void Start () {
@@ -27,9 +27,12 @@ public class DynamicBoneHandRigger : MonoBehaviour {
 
     void AssignToDynamicBoneObject()
     {
-        List<DynamicBoneColliderBase> allColliders = new List<DynamicBoneColliderBase>();
-        allColliders.AddRange(boneRoot.m_Colliders);
-        allColliders.AddRange(colliders);
-        boneRoot.m_Colliders = allColliders;
+        foreach (DynamicBone boneRoot in boneRoots)
+        {
+            List<DynamicBoneColliderBase> allColliders = new List<DynamicBoneColliderBase>();
+            allColliders.AddRange(boneRoot.m_Colliders);
+            allColliders.AddRange(colliders);
+            boneRoot.m_Colliders = allColliders;
+        }
     }
 }
