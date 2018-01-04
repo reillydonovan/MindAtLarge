@@ -29,7 +29,10 @@ namespace Leap.Unity {
 
     public ProfilerSample(string sampleName, UnityEngine.Object obj) {
             if(obj == null)
-            { UnityEngine.Debug.LogError("obj == null"); }
+            {
+                UnityEngine.Debug.LogError("obj == null");
+                return;
+            }
             Profiler.BeginSample(sampleName, obj);
     }
 
