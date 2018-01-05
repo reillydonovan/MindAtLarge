@@ -67,11 +67,11 @@ Material:
     - _Glossiness: 0.519
     - _GlossyReflections: 1
     - _Metallic: 0
-    - _ModCount: 13.88
+    - _ModCount: 10.38
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _SinScale: 3.81
+    - _SinScale: 0.26
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -81,17 +81,17 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color_Offset: {r: 5.87, g: 7, b: 8.3, a: 1}
-    - _Color_Time_Mult: {r: 2.12, g: 0.21, b: -0.56, a: 1}
+    - _Color_Offset: {r: 4.49, g: 7, b: 8.3, a: 1}
+    - _Color_Time_Mult: {r: 0.2, g: 0.2, b: 0.3, a: 1}
     - _Color_Time_mult: {r: 38.01, g: 10.01, b: 0, a: 1}
     - _Color_UV_Mult: {r: 1.85, g: -11.43, b: -2.79, a: 1}
-    - _Color_U_Mult: {r: 2.15, g: 1.1, b: 4.33, a: 1}
+    - _Color_U_Mult: {r: 5.5, g: 1.1, b: 4.33, a: 1}
     - _Color_V_Mult: {r: 1.7, g: -1.03, b: 0, a: 1}
-    - _Distor_Offset: {r: 33.07, g: 2.31, b: 3, a: 1}
-    - _Distor_Spacing: {r: 2, g: 2, b: 0, a: 1}
-    - _Distor_Time_Mult: {r: 1.51, g: 0.93, b: 0, a: 1}
+    - _Distor_Offset: {r: 16.19, g: 15.58, b: 3, a: 1}
+    - _Distor_Spacing: {r: 1.26, g: 1.97, b: 0, a: 1}
+    - _Distor_Time_Mult: {r: 0.1, g: 0.1, b: 1.54, a: 1}
     - _Distor_Time_mult: {r: -9.34, g: -9.8, b: 0, a: 1}
-    - _Distor_U_Mult: {r: 2.47, g: 0.67, b: 2, a: 1}
-    - _Distor_V_Mult: {r: 1, g: 1.56, b: 2, a: 1}
+    - _Distor_U_Mult: {r: 27.87, g: 29.18, b: 2, a: 1}
+    - _Distor_V_Mult: {r: 58.66, g: 58.65, b: 2, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Time_mult: {r: 17.11, g: 11.23, b: 0.15, a: 0.84}
