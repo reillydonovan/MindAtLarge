@@ -2429,6 +2429,8 @@ MonoBehaviour:
   MaxVolume: 1
   StartingVolume: 0
   RampUpTime: 1
+  trackName: monteverdi
+  hostName: smallbook
 --- !u!114 &114866079386438042
 MonoBehaviour:
   m_ObjectHideFlags: 1

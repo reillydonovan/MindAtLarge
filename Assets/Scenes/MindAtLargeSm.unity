@@ -1000,91 +1000,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 114178512790883928, guid: d99a276fb2a8b724d8d2557693c89478,
-        type: 2}
-      propertyPath: _manager
-      value: 
-      objectReference: {fileID: 2127414434}
-    - target: {fileID: 114937900298315848, guid: d99a276fb2a8b724d8d2557693c89478,
-        type: 2}
-      propertyPath: _manager
-      value: 
-      objectReference: {fileID: 2127414434}
-    - target: {fileID: 114644685085297428, guid: d99a276fb2a8b724d8d2557693c89478,
-        type: 2}
-      propertyPath: _manager
-      value: 
-      objectReference: {fileID: 2127414434}
-    - target: {fileID: 114140782512869040, guid: d99a276fb2a8b724d8d2557693c89478,
-        type: 2}
-      propertyPath: _manager
-      value: 
-      objectReference: {fileID: 2127414434}
-    - target: {fileID: 1205327854105206, guid: d99a276fb2a8b724d8d2557693c89478, type: 2}
-      propertyPath: m_Name
-      value: JesseBookshelfRemastered
-      objectReference: {fileID: 0}
-    - target: {fileID: 114809641726299044, guid: d99a276fb2a8b724d8d2557693c89478,
-        type: 2}
-      propertyPath: Audiotrigger
-      value: 
-      objectReference: {fileID: 1225657679}
-    - target: {fileID: 114793807686837654, guid: d99a276fb2a8b724d8d2557693c89478,
-        type: 2}
-      propertyPath: _manager
-      value: 
-      objectReference: {fileID: 2127414434}
-    - target: {fileID: 114468255758739262, guid: d99a276fb2a8b724d8d2557693c89478,
-        type: 2}
-      propertyPath: _manager
-      value: 
-      objectReference: {fileID: 2127414434}
-    - target: {fileID: 114888004540534788, guid: d99a276fb2a8b724d8d2557693c89478,
-        type: 2}
-      propertyPath: _manager
-      value: 
-      objectReference: {fileID: 2127414434}
-    - target: {fileID: 114236128249947560, guid: d99a276fb2a8b724d8d2557693c89478,
-        type: 2}
-      propertyPath: _manager
-      value: 
-      objectReference: {fileID: 2127414434}
-    - target: {fileID: 114866079386438042, guid: d99a276fb2a8b724d8d2557693c89478,
-        type: 2}
-      propertyPath: _manager
-      value: 
-      objectReference: {fileID: 2127414434}
-    - target: {fileID: 114318885119517640, guid: d99a276fb2a8b724d8d2557693c89478,
-        type: 2}
-      propertyPath: _manager
-      value: 
-      objectReference: {fileID: 2127414434}
-    - target: {fileID: 114176357581448938, guid: d99a276fb2a8b724d8d2557693c89478,
-        type: 2}
-      propertyPath: _manager
-      value: 
-      objectReference: {fileID: 2127414434}
-    - target: {fileID: 114068315599586764, guid: d99a276fb2a8b724d8d2557693c89478,
-        type: 2}
-      propertyPath: _manager
-      value: 
-      objectReference: {fileID: 2127414434}
-    - target: {fileID: 114783146841530650, guid: d99a276fb2a8b724d8d2557693c89478,
-        type: 2}
-      propertyPath: _manager
-      value: 
-      objectReference: {fileID: 2127414434}
-    - target: {fileID: 114485079715088846, guid: d99a276fb2a8b724d8d2557693c89478,
-        type: 2}
-      propertyPath: _manager
-      value: 
-      objectReference: {fileID: 2127414434}
-    - target: {fileID: 114738748788725016, guid: d99a276fb2a8b724d8d2557693c89478,
-        type: 2}
-      propertyPath: _manager
-      value: 
-      objectReference: {fileID: 2127414434}
-    - target: {fileID: 114379919463320646, guid: d99a276fb2a8b724d8d2557693c89478,
+    - target: {fileID: 114007790076581332, guid: d99a276fb2a8b724d8d2557693c89478,
         type: 2}
       propertyPath: _manager
       value: 
@@ -1094,11 +1010,95 @@ Prefab:
       propertyPath: _manager
       value: 
       objectReference: {fileID: 2127414434}
-    - target: {fileID: 114007790076581332, guid: d99a276fb2a8b724d8d2557693c89478,
+    - target: {fileID: 114379919463320646, guid: d99a276fb2a8b724d8d2557693c89478,
         type: 2}
       propertyPath: _manager
       value: 
       objectReference: {fileID: 2127414434}
+    - target: {fileID: 114738748788725016, guid: d99a276fb2a8b724d8d2557693c89478,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 2127414434}
+    - target: {fileID: 114485079715088846, guid: d99a276fb2a8b724d8d2557693c89478,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 2127414434}
+    - target: {fileID: 114783146841530650, guid: d99a276fb2a8b724d8d2557693c89478,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 2127414434}
+    - target: {fileID: 114068315599586764, guid: d99a276fb2a8b724d8d2557693c89478,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 2127414434}
+    - target: {fileID: 114176357581448938, guid: d99a276fb2a8b724d8d2557693c89478,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 2127414434}
+    - target: {fileID: 114318885119517640, guid: d99a276fb2a8b724d8d2557693c89478,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 2127414434}
+    - target: {fileID: 114866079386438042, guid: d99a276fb2a8b724d8d2557693c89478,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 2127414434}
+    - target: {fileID: 114236128249947560, guid: d99a276fb2a8b724d8d2557693c89478,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 2127414434}
+    - target: {fileID: 114888004540534788, guid: d99a276fb2a8b724d8d2557693c89478,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 2127414434}
+    - target: {fileID: 114468255758739262, guid: d99a276fb2a8b724d8d2557693c89478,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 2127414434}
+    - target: {fileID: 114793807686837654, guid: d99a276fb2a8b724d8d2557693c89478,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 2127414434}
+    - target: {fileID: 114809641726299044, guid: d99a276fb2a8b724d8d2557693c89478,
+        type: 2}
+      propertyPath: Audiotrigger
+      value: 
+      objectReference: {fileID: 1225657679}
+    - target: {fileID: 114140782512869040, guid: d99a276fb2a8b724d8d2557693c89478,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 2127414434}
+    - target: {fileID: 114644685085297428, guid: d99a276fb2a8b724d8d2557693c89478,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 2127414434}
+    - target: {fileID: 114937900298315848, guid: d99a276fb2a8b724d8d2557693c89478,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 2127414434}
+    - target: {fileID: 114178512790883928, guid: d99a276fb2a8b724d8d2557693c89478,
+        type: 2}
+      propertyPath: _manager
+      value: 
+      objectReference: {fileID: 2127414434}
+    - target: {fileID: 1205327854105206, guid: d99a276fb2a8b724d8d2557693c89478, type: 2}
+      propertyPath: m_Name
+      value: JesseBookshelfRemastered
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d99a276fb2a8b724d8d2557693c89478, type: 2}
   m_IsPrefabParent: 0
@@ -15594,12 +15594,7 @@ Prefab:
         type: 2}
       propertyPath: Audiotrigger
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114017620043485656, guid: 56a6d62c72d50fe43b2a79d97d017f43,
-        type: 2}
-      propertyPath: hostName
-      value: mindatlarge01
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1225657679}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 56a6d62c72d50fe43b2a79d97d017f43, type: 2}
   m_IsPrefabParent: 0
@@ -16584,8 +16579,8 @@ MonoBehaviour:
   interactionManager: {fileID: 2127414434}
   leftHandControllers:
   - {fileID: 2110293450}
+  rightHandControllers:
   - {fileID: 483777534}
-  rightHandControllers: []
   OnLeftHandActive:
     m_PersistentCalls:
       m_Calls:

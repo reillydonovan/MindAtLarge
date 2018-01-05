@@ -4777,6 +4777,8 @@ MonoBehaviour:
   MaxVolume: 1
   StartingVolume: 0
   RampUpTime: 1
+  trackName: monteverdi
+  hostName: smalltable
 --- !u!114 &114031482237540930
 MonoBehaviour:
   m_ObjectHideFlags: 1
