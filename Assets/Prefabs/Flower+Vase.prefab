@@ -1137,6 +1137,7 @@ GameObject:
   - component: {fileID: 4669732181406948}
   - component: {fileID: 33816430486641308}
   - component: {fileID: 23350242678525346}
+  - component: {fileID: 114323064734457398}
   m_Layer: 0
   m_Name: Vase
   m_TagString: Untagged
@@ -3613,8 +3614,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1411303572739914}
-  m_LocalRotation: {x: 0.0000004172325, y: -0.1299806, z: -0.000000067055225, w: 0.9915166}
-  m_LocalPosition: {x: -1.452, y: 1.9793, z: -0.447}
+  m_LocalRotation: {x: 0.0000004224682, y: -0.26291117, z: -0.000000009998611, w: 0.96482}
+  m_LocalPosition: {x: -1.925, y: 1.981, z: -1.079}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4212992148937732}
@@ -4691,13 +4692,13 @@ MeshRenderer:
   m_GameObject: {fileID: 1456091623224092}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: bf989c38b47c249449235d2a9878b35f, type: 2}
+  - {fileID: 2100000, guid: d15bf30c80204b242879ed28175c85ae, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4843,8 +4844,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delaySeconds: 1
-  factorDelta: 0.1
-  maxFaxtor: 0.8
+  factorDelta: 0.025
+  maxFaxtor: 0.9
   heightMapSpeed: 1
 --- !u!114 &114269139289706868
 MonoBehaviour:
@@ -4860,6 +4861,19 @@ MonoBehaviour:
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_Bound: 0
+--- !u!114 &114323064734457398
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1456091623224092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7bf3324dc85ac444891fe58f59705a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animatedMaterial: {fileID: 2100000, guid: d15bf30c80204b242879ed28175c85ae, type: 2}
+  AnimSpeed: {x: 0.01, y: -0.01}
 --- !u!114 &114742572869535696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4872,8 +4886,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delaySeconds: 1
-  factorDelta: 0.1
-  maxFaxtor: 0.8
+  factorDelta: 0.025
+  maxFaxtor: 0.9
   heightMapSpeed: 1
 --- !u!114 &114793051638150726
 MonoBehaviour:
