@@ -527,14 +527,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1205327854105206}
-  m_LocalRotation: {x: -0.5620486, y: 0.42907032, z: 0.42907032, w: 0.5620486}
-  m_LocalPosition: {x: -3.669, y: 1.6949999, z: -2.0979996}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalRotation: {x: 0.7006074, y: -0.095652394, z: 0.0956524, w: 0.7006073}
+  m_LocalPosition: {x: -1.97, y: 0.98, z: -3.187}
+  m_LocalScale: {x: 0.01, y: 0.0100000035, z: 0.010000002}
   m_Children:
   - {fileID: 4795590586118160}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 74.717}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4427415793184354
 Transform:
   m_ObjectHideFlags: 1
@@ -658,9 +658,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1585439942705882}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.011022023, y: 0.01, z: 0.01}
+  m_LocalRotation: {x: -0.70710504, y: 0.0016369519, z: -0.0016370041, w: 0.7071048}
+  m_LocalPosition: {x: 5, y: 32, z: -67.6}
+  m_LocalScale: {x: 110.22023, y: 99.999985, z: 99.99996}
   m_Children:
   - {fileID: 4427415793184354}
   - {fileID: 4679942963011588}
@@ -1275,7 +1275,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 2d4d6ca72d4747e4393f7104cc853750, type: 2}
+  - {fileID: 2100000, guid: d23b8144db96eb14fa28b6e86b1f9dfc, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1349,7 +1349,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1205327854105206}
-  m_Mesh: {fileID: 4300000, guid: 928ae4774dea04847a1ca68dcce3e41e, type: 3}
+  m_Mesh: {fileID: 4300000, guid: d23b8144db96eb14fa28b6e86b1f9dfc, type: 3}
 --- !u!33 &33140014135749988
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -1745,7 +1745,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 928ae4774dea04847a1ca68dcce3e41e, type: 3}
+  m_Mesh: {fileID: 4300000, guid: d23b8144db96eb14fa28b6e86b1f9dfc, type: 3}
 --- !u!65 &65029807700110732
 BoxCollider:
   m_ObjectHideFlags: 1
