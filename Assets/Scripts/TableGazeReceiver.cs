@@ -10,6 +10,10 @@ public class TableGazeReceiver : GazeReceiver
     public float StartingVolume = 0.0f;
     public float RampUpTime = 1;
 
+
+	public string trackName = "monteverdi";
+	public string hostName = "mindatlarge";
+
     private float currentVolume = 0.0f;
     private float lastVolume = 0.0f;
     //private float volumeUpdateDelta = 0.1f;
@@ -40,7 +44,7 @@ public class TableGazeReceiver : GazeReceiver
         if( Mathf.Abs(lastVolume-currentVolume) > volumeDelta && 
             Mathf.Abs(Time.fixedTime- lastVolumeTime) > volumeTimeDelta)
         {
-            Audiotrigger.setTrackAndVolume("monteverdi", currentVolume);
+			Audiotrigger.setTrackAndVolume(trackName, currentVolume,hostName);
             lastVolume = currentVolume;
             lastVolumeTime = Time.fixedTime;
         }

@@ -25,7 +25,7 @@ public class RemoteAudioTriggerUdp : MonoBehaviour {
 		
 	}
 
-	private void SendData(string trackName, float volumelevel)
+	private void SendData(string trackName, float volumelevel, string hostname)
 	{
 		if(String.IsNullOrEmpty(trackName) || volumelevel < 0 )
 		{ Debug.LogError("Attempting to send invalid trackname or volume!"); return; }
@@ -34,7 +34,7 @@ public class RemoteAudioTriggerUdp : MonoBehaviour {
 			socket = new UdpClient();
 			// IPEndPoint ip = new IPEndPoint(IPAddress.Broadcast, 9999);
 
-			string writeString = "" + trackName + "/" + volumelevel;
+			string writeString = hostname + "/" + trackName + "/" + volumelevel;
 			byte[] bytes = Encoding.ASCII.GetBytes(writeString);
 
 			Debug.Log("sending track: " + trackName + " at volume: " + volumelevel + " to " + ip + "\n  writeString: " + writeString);
@@ -46,21 +46,21 @@ public class RemoteAudioTriggerUdp : MonoBehaviour {
 		{ Debug.Log("Socket error:" + e); }
 	}
 
-	public void SendVolume(float volume)
+	public void SendVolume(float volume, string hostName)
 	{
-		SendData(CurrentTrack, volume);
+		SendData(CurrentTrack, volume, hostName);
 		CurrentVolume = volume;
 	}
 
-	public void SendTrackName(string trackName)
+	public void SendTrackName(string trackName, string hostName)
 	{
-		SendData(trackName, CurrentVolume);
+		SendData(trackName, CurrentVolume, hostName);
 		CurrentTrack = trackName;
 	}
 
-	public void setTrackAndVolume(string trackName, float volumelevel)
+	public void setTrackAndVolume(string trackName, float volumelevel, string hostName)
 	{
-		SendData(trackName, volumelevel);
+		SendData(trackName, volumelevel, hostName);
 		CurrentVolume = volumelevel;
 		CurrentTrack = trackName;
 	}
@@ -73,6 +73,6 @@ public class RemoteAudioTriggerUdp : MonoBehaviour {
 	public void OnDestroy()
 	{
 		Debug.Log("Remote Audio Trigger OnDestroy");
-		SendData(CurrentTrack, 0);
+		//SendData(CurrentTrack, 0, hostname);
 	}
 }

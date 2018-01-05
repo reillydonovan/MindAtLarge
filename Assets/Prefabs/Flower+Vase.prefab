@@ -1138,6 +1138,8 @@ GameObject:
   - component: {fileID: 33816430486641308}
   - component: {fileID: 23350242678525346}
   - component: {fileID: 114323064734457398}
+  - component: {fileID: 135441500467643720}
+  - component: {fileID: 114017620043485656}
   m_Layer: 0
   m_Name: Vase
   m_TagString: Untagged
@@ -3614,8 +3616,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1411303572739914}
-  m_LocalRotation: {x: 0.00000041744096, y: -0.28129214, z: -0.000000006928923, w: 0.9596222}
-  m_LocalPosition: {x: -2.5518925, y: 1.707, z: -0.6259512}
+  m_LocalRotation: {x: 0.000000084105686, y: 0.8909413, z: 0.0000004089393, w: 0.45411855}
+  m_LocalPosition: {x: -2.518, y: 1.762, z: -0.738}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4212992148937732}
@@ -3623,7 +3625,7 @@ Transform:
   - {fileID: 4198506207099806}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 125.98401, z: 0}
 --- !u!4 &4574439481538872
 Transform:
   m_ObjectHideFlags: 1
@@ -4759,6 +4761,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114017620043485656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1456091623224092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62d33f2323603d64480fb62d19da538a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delaySeconds: 1
+  Audiotrigger: {fileID: 0}
+  MaxVolume: 1
+  StartingVolume: 0
+  RampUpTime: 1
 --- !u!114 &114031482237540930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4976,6 +4994,18 @@ MonoBehaviour:
   m_DistantDisable: 0
   m_ReferenceObject: {fileID: 0}
   m_DistanceToObject: 20
+--- !u!135 &135441500467643720
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1456091623224092}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.2948456
+  m_Center: {x: -6.7858306e-13, y: 1.9750623, z: -0.0000076032893}
 --- !u!136 &136219145465563074
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -4986,9 +5016,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 1.7526472
-  m_Height: 8.977169
+  m_Height: 7.0743084
   m_Direction: 1
-  m_Center: {x: 0.37854713, y: 4.45857, z: 0.48440674}
+  m_Center: {x: 0.37854683, y: 5.4099965, z: 0.48440537}
 --- !u!136 &136889847509407718
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -4998,10 +5028,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 2.4964852
-  m_Height: 10.381011
+  m_Radius: 2.496485
+  m_Height: 7.5769234
   m_Direction: 1
-  m_Center: {x: -0.4185143, y: 4.7871037, z: -0.57211006}
+  m_Center: {x: -0.41850552, y: 6.189138, z: -0.57210857}
 --- !u!137 &137241440099927576
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
