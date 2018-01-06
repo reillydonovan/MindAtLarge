@@ -13681,6 +13681,11 @@ Prefab:
       propertyPath: m_AABB.m_Center.x
       value: -0.00000011920929
       objectReference: {fileID: 0}
+    - target: {fileID: 114151040486869924, guid: 6fab590120b4a46f3b2b9d3a3144d30d,
+        type: 2}
+      propertyPath: handcolliders
+      value: 
+      objectReference: {fileID: 1016718233}
     m_RemovedComponents:
     - {fileID: 64525791599830096, guid: 6fab590120b4a46f3b2b9d3a3144d30d, type: 2}
     - {fileID: 64360727492882926, guid: 6fab590120b4a46f3b2b9d3a3144d30d, type: 2}
@@ -16713,6 +16718,34 @@ MeshCollider:
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: a2102537adf4b455aac11c542862f128, type: 3}
 --- !u!64 &2050002360
+MeshCollider:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2050002353}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: a2102537adf4b455aac11c542862f128, type: 3}
+--- !u!64 &2050002367
+MeshCollider:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2050002353}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: a2102537adf4b455aac11c542862f128, type: 3}
+--- !u!64 &2050002368
 MeshCollider:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
