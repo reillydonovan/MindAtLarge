@@ -11,19 +11,33 @@ public class RemoteAudioTriggerUdp : MonoBehaviour {
 
 	private string CurrentTrack = null;
 	private float CurrentVolume = -1.0f;
-
+    [Tooltip("if no ip addresses are listed the script will attempt to use udp broadcast")] public string[] ipAddresses; 
 	private UdpClient socket;
-	public IPEndPoint ip = new IPEndPoint(IPAddress.Broadcast, 9999);
 
-	void Start () {
-		// Debug.Log("Initializing UDP broadcast socket at " + ip);
-		// socket = new UdpClient();
-		// Debug.Log("....Done Initializing");
-	}
+    //list ip endpoints (raspberry pi ip addresses)
+    List<IPEndPoint> ips = new List<IPEndPoint>();
+    void Start ()
+    {
+        //add all of the ip addresses to the list
+        if (ipAddresses.Length > 0)
+        {
+            foreach (string ipAddr in ipAddresses)
+            {
+                IPEndPoint ip = new IPEndPoint(IPAddress.Parse(ipAddr), 9999);
+                ips.Add(ip);
+            }
+        }
+        else
+        {
+            IPEndPoint ip = new IPEndPoint(IPAddress.Broadcast, 9999);
+            ips.Add(ip);
+        }
+        // Debug.Log("Initializing UDP broadcast socket at " + ip);
+        // socket = new UdpClient();
+        // Debug.Log("....Done Initializing");
+    }
 
-	void Update () {
-		
-	}
+	void Update () { }
 
 	private void SendData(string trackName, float volumelevel, string hostname)
 	{
@@ -37,9 +51,11 @@ public class RemoteAudioTriggerUdp : MonoBehaviour {
 			string writeString = hostname + "/" + trackName + "/" + volumelevel;
 			byte[] bytes = Encoding.ASCII.GetBytes(writeString);
 
-			Debug.Log("sending track: " + trackName + " at volume: " + volumelevel + " to " + ip + "\n  writeString: " + writeString);
-			socket.Send(bytes, bytes.Length, ip);
-
+            foreach (IPEndPoint ip in ips)
+            {
+                Debug.Log("sending track: " + trackName + " at volume: " + volumelevel + " to " + ip + "\n  writeString: " + writeString);
+                socket.Send(bytes, bytes.Length, ip);
+            }
 			socket.Close();
 		}
 		catch (Exception e)
