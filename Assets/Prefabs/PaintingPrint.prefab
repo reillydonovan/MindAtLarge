@@ -20,10 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4193029951970552}
   - component: {fileID: 33624828494549880}
-  - component: {fileID: 64412427235841726}
   - component: {fileID: 23918047157492658}
+  - component: {fileID: 114684092143488380}
   m_Layer: 0
-  m_Name: Quad (1)
+  m_Name: PortraitBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,12 +41,12 @@ GameObject:
   - component: {fileID: 64937874628826312}
   - component: {fileID: 23773486012448516}
   m_Layer: 0
-  m_Name: Quad
+  m_Name: PortraitForeground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1399915409272008
 GameObject:
   m_ObjectHideFlags: 0
@@ -68,15 +68,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1399915409272008}
-  m_LocalRotation: {x: -0.5644512, y: 0.4259047, z: -0.42590448, w: 0.56445146}
-  m_LocalPosition: {x: 2.5389998, y: -0.2980001, z: -1.4190003}
-  m_LocalScale: {x: 0.6864682, y: 1.0159727, z: 0.0001975448}
+  m_LocalRotation: {x: -0.000000059604645, y: 0.8044801, z: 0.00000008940697, w: -0.5939798}
+  m_LocalPosition: {x: -4.3149, y: 2.593, z: -1.9133979}
+  m_LocalScale: {x: 0.78959256, y: 1.3488866, z: 1}
   m_Children:
   - {fileID: 4336751496995586}
   - {fileID: 4193029951970552}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 162.88, y: 89.99999, z: -90}
 --- !u!4 &4193029951970552
 Transform:
   m_ObjectHideFlags: 1
@@ -85,8 +85,8 @@ Transform:
   m_GameObject: {fileID: 1191854150082510}
   m_LocalRotation: {x: -0.000000089406946, y: 0.000000014901158, z: -0.00000005960463,
     w: 1}
-  m_LocalPosition: {x: 7.245491e-14, y: 0.00000011733512, z: 0}
-  m_LocalScale: {x: 1.0000032, y: 0.9999974, z: 1.0124292}
+  m_LocalPosition: {x: 0.8398, y: -0.0183, z: -0.0253}
+  m_LocalScale: {x: 0.8220494, y: 0.73941344, z: 1}
   m_Children: []
   m_Father: {fileID: 4049739441270784}
   m_RootOrder: 1
@@ -98,8 +98,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1207814893487432}
   m_LocalRotation: {x: -0, y: 0.000000014901158, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: -22}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.025, y: -0.041, z: -22}
+  m_LocalScale: {x: 0.86600775, y: 0.86600775, z: 1}
   m_Children: []
   m_Father: {fileID: 4049739441270784}
   m_RootOrder: 0
@@ -152,7 +152,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 1a4eaead16bc70d448bd20d84a447a49, type: 2}
+  - {fileID: 2100000, guid: d191365a34766f34e904e9657607d8f3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -186,20 +186,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1207814893487432}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &64412427235841726
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1191854150082510}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!64 &64937874628826312
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -214,3 +200,17 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114684092143488380
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1191854150082510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a65bed4e8dd38244b56bc404971614d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  maxDist: 1.94
+  minDist: 0.65

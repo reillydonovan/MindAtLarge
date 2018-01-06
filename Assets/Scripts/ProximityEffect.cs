@@ -5,25 +5,55 @@ using UnityEngine;
 public class ProximityEffect : MonoBehaviour
 {
     public Transform target;
+    private Material saturationMaterial;
 
-    void Update() { 
+    public float maxDist = 5;
+    public float minDist = 0;
+    private float normDist = 1;
+    private float currentDistance = 0;
 
-
-            float distanceToTarget = Vector3.Distance(transform.position, target.position);
-
-            if (distanceToTarget < 1) distanceToTarget = 1;
-
-           // Remap(distanceToTarget, 0, 1, -1, 1);
-            Renderer rend = GetComponent<Renderer>();
-            rend.material.SetVector("_HSLAAdjust", new Vector4(0, 1 / distanceToTarget, 0, 0));
-
-            Debug.Log(distanceToTarget);
-
-    }
-    public float Remap(float value, float from1, float to1, float from2, float to2)
+    void Start()
     {
-        return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
+        saturationMaterial = GetComponent<Renderer>().material;
     }
 
+    void Update()
+    { 
+        float distanceToTarget = Vector3.Distance(transform.position, target.position);
+        currentDistance = distanceToTarget;
 
+        distanceToTarget = Mathf.Min(distanceToTarget, maxDist);
+        distanceToTarget = Mathf.Max(distanceToTarget, minDist);
+        //Debug.Log(distanceToTarget);
+        normDist =( distanceToTarget-minDist) / (maxDist-minDist);
+        float saturation =  - normDist;
+        //Debug.Log("saturation: " + saturation + " normDist: " + normDist + " current: " + currentDistance);
+        saturationMaterial.SetVector("_HSLAAdjust", new Vector4(0,saturation, 0, 0));
+    }
+
+    private void OnDrawGizmos()
+    {
+        Vector3 fromMeToTarg = target.position - transform.position;
+        Vector3 fromMeToTargNorm = fromMeToTarg.normalized;
+
+        if(currentDistance < minDist)
+        {
+            Gizmos.color = Color.red;
+        }
+        else if(currentDistance >= minDist)
+        {
+            Gizmos.color = Color.green;
+        }
+        else if(currentDistance >= maxDist)
+        {
+            Gizmos.color = Color.red;
+        }
+        Gizmos.DrawLine(transform.position, target.position);
+
+        //Debug.DrawLine(transform.position, target.position);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, minDist);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, maxDist);     
+    }
 }

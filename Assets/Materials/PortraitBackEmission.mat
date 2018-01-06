@@ -6,10 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Two-Sided Tapestry
-  m_Shader: {fileID: 4800000, guid: 95b9d48c21ae549a88fec289c10454e4, type: 3}
-  m_ShaderKeywords: _EMISSION
-  m_LightmapFlags: 2
+  m_Name: PortraitBackEmission
+  m_Shader: {fileID: 4800000, guid: 734750628ee8742c1bd1a0b173a536fb, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -35,13 +35,13 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 8600000, guid: cb52bac44012f7c42b211efae7781e44, type: 2}
-        m_Scale: {x: 0.29, y: 0.69}
-        m_Offset: {x: 0.39, y: -0.01}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 8400000, guid: a18fa553cf26f9f42aaa15ab10eacbc9, type: 2}
-        m_Scale: {x: 0.29, y: 0.69}
-        m_Offset: {x: 0.39, y: -0.01}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -60,12 +60,14 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 1
+    - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
+    - _ModCount: 3.78
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _SinScale: 0.87
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -73,4 +75,13 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color_Offset: {r: 1, g: 2, b: 9.54, a: 1}
+    - _Color_Time_Mult: {r: -1.77, g: 3.67, b: 6.69, a: 1}
+    - _Color_U_Mult: {r: 0.3, g: -1.7, b: 0.15, a: 1}
+    - _Color_V_Mult: {r: 2.67, g: -0.95, b: -0.07, a: 1}
+    - _Distor_Offset: {r: 0.74, g: 2, b: 3, a: 1}
+    - _Distor_Spacing: {r: 1.36, g: 1.41, b: 0, a: 1}
+    - _Distor_Time_Mult: {r: 0.3, g: 1.55, b: 3.35, a: 1}
+    - _Distor_U_Mult: {r: 271.85, g: 28.02, b: 2, a: 1}
+    - _Distor_V_Mult: {r: 165.9, g: 2.98, b: 5.39, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

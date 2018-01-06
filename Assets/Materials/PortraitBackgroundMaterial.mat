@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Two-Sided Tapestry
-  m_Shader: {fileID: 4800000, guid: 95b9d48c21ae549a88fec289c10454e4, type: 3}
-  m_ShaderKeywords: _EMISSION
+  m_Name: PortraitBackgroundMaterial
+  m_Shader: {fileID: 4800000, guid: 26d98c1d465ac6745811635054d70808, type: 3}
+  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -35,13 +35,13 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 8600000, guid: cb52bac44012f7c42b211efae7781e44, type: 2}
-        m_Scale: {x: 0.29, y: 0.69}
-        m_Offset: {x: 0.39, y: -0.01}
+        m_Texture: {fileID: 8600000, guid: ee31db3d5ae7e0047834baa4756e1a26, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 8400000, guid: a18fa553cf26f9f42aaa15ab10eacbc9, type: 2}
-        m_Scale: {x: 0.29, y: 0.69}
-        m_Offset: {x: 0.39, y: -0.01}
+        m_Texture: {fileID: 2800000, guid: 57f4ae6c8d6f13f4b8795fb3a44e89cd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -56,21 +56,33 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
+    - _ColorMask: 15
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DstBlend: 0
+    - _DstBlend: 10
     - _GlossMapScale: 1
-    - _Glossiness: 1
+    - _Glossiness: 0.457
     - _GlossyReflections: 1
+    - _HSLRangeMax: 1
+    - _HSLRangeMin: 0
+    - _HSVRangeMax: 1
+    - _HSVRangeMin: 0
     - _Metallic: 0
-    - _Mode: 0
+    - _Mode: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
     - _UVSec: 0
-    - _ZWrite: 1
+    - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _HSLAAdjust: {r: 0, g: 0, b: 0, a: 0}
+    - _HSVAAdjust: {r: 0, g: 0, b: 0, a: -0.46}
