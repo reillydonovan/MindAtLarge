@@ -9,13 +9,13 @@ public class ProximityEffect : MonoBehaviour
 
     public float maxDist = 5;
     public float minDist = 0;
-    public float normDist = 1;
-    public float currentDistance = 0;
+    private float normDist = 1;
+    private float currentDistance = 0;
 
     void Start()
     {
         saturationMaterial = GetComponent<Renderer>().material;
-    }//24x357/8
+    }
 
     void Update()
     { 
@@ -26,7 +26,9 @@ public class ProximityEffect : MonoBehaviour
         distanceToTarget = Mathf.Max(distanceToTarget, minDist);
         //Debug.Log(distanceToTarget);
         normDist =( distanceToTarget-minDist) / (maxDist-minDist);
-        saturationMaterial.SetVector("_HSLAAdjust", new Vector4(0, 1 / distanceToTarget, 0, 0));
+        float saturation =  - normDist;
+        //Debug.Log("saturation: " + saturation + " normDist: " + normDist + " current: " + currentDistance);
+        saturationMaterial.SetVector("_HSLAAdjust", new Vector4(0,saturation, 0, 0));
     }
 
     private void OnDrawGizmos()
@@ -49,9 +51,9 @@ public class ProximityEffect : MonoBehaviour
         Gizmos.DrawLine(transform.position, target.position);
 
         //Debug.DrawLine(transform.position, target.position);
-        //Gizmos.color = Color.green;
-       // Gizmos.DrawWireSphere(transform.position, minDist);
-       // Gizmos.color = Color.red;
-       // Gizmos.DrawWireSphere(transform.position, maxDist);     
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, minDist);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, maxDist);     
     }
 }
