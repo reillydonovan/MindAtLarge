@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.035505973, g: 0.1295717, b: 0.26435184, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce5b59bc01be49447990b915e5f68ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PortNameString: COM9
+  PortNameString: COM5
   LightSwitch: {fileID: 132216215}
 --- !u!1 &132216213
 GameObject:
@@ -317,7 +317,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 132216213}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ce0dded5ee16eb41857e030b18f90a8, type: 3}
   m_Name: 
@@ -16843,6 +16843,11 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 0.47488108
       objectReference: {fileID: 0}
+    - target: {fileID: 23214465584603338, guid: 4da903f9dcc5e3c4eae02f00e7d6c427,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2e65c05e758161040868557a46c4b0e7, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4da903f9dcc5e3c4eae02f00e7d6c427, type: 2}
   m_IsPrefabParent: 0
