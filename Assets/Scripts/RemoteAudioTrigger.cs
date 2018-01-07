@@ -93,9 +93,9 @@ public class RemoteAudioTrigger: MonoBehaviour
     {
         Debug.Log("Remote Audio Trigger OnDestroy");
         SendData(CurrentTrack, 0);
-        stream.Close();
-        writer.Close();
-        socket.Close();
+        //stream.Close();
+       // writer.Close();
+       // socket.Close();
 
     }
 }
