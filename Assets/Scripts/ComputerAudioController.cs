@@ -14,12 +14,13 @@ public class ComputerAudioController : MonoBehaviour
     private float currentVolume = 0.0f;
     private float lastVolume = 0.0f;
     private float lastVolumeTime = 0.0f;
-    private float volumeTimeDelta = 0.2f;
+    private float volumeTimeDelta = 0.1f;
 
     public AudioSource source;
     // Use this for initialization
     void Start ()
     {
+        Debug.Log("started the audio business...");
         source.loop = true;
         source.Play();
         source.volume = 0;
@@ -32,16 +33,19 @@ public class ComputerAudioController : MonoBehaviour
 
         if (isBookShelfOn || isTableOn)
         {
+            Debug.Log("ramping down computer audio");
             currentVolume = Mathf.Min(MaxVolume, currentVolume + volumeDelta);
         }
         else
         {
+            Debug.Log("scaling up computer audio");
             currentVolume = Mathf.Max(0, currentVolume - volumeDelta);
         }
 
         if (Mathf.Abs(lastVolume - currentVolume) > volumeDelta &&
             Mathf.Abs(Time.fixedTime - lastVolumeTime) > volumeTimeDelta)
         {
+            Debug.Log("current level set at: " + currentVolume);
             source.volume = currentVolume;
             //todo set volume
             lastVolume = currentVolume;
