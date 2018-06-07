@@ -7,7 +7,8 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
-public class RemoteAudioTriggerUdp : MonoBehaviour {
+public class RemoteAudioTriggerUdp : MonoBehaviour
+{
 
 	private string CurrentTrack = null;
 	private float CurrentVolume = -1.0f;

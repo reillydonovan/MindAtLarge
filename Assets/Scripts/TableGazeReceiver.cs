@@ -49,6 +49,7 @@ public class TableGazeReceiver : GazeReceiver
             lastVolumeTime = Time.fixedTime;
         }
     }
+
     protected override void GazeEntryTriggerOnce(RaycastHit hit)
     {
         isGazedOn = true;
