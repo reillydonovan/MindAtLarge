@@ -33,13 +33,13 @@ public class ComputerAudioController : MonoBehaviour
 
         if (isBookShelfOn || isTableOn)
         {
-            Debug.Log("ramping down computer audio");
-            currentVolume = Mathf.Min(MaxVolume, currentVolume + volumeDelta);
+			Debug.Log("scaling down computer audio");
+			currentVolume = Mathf.Max(0, currentVolume - volumeDelta);
         }
         else
         {
-            Debug.Log("scaling up computer audio");
-            currentVolume = Mathf.Max(0, currentVolume - volumeDelta);
+			Debug.Log("ramping up computer audio");
+			currentVolume = Mathf.Min(MaxVolume, currentVolume + volumeDelta);
         }
 
         if (Mathf.Abs(lastVolume - currentVolume) > volumeDelta &&

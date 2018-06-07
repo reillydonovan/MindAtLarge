@@ -10,6 +10,9 @@ public class TableGazeReceiver : GazeReceiver
     public float StartingVolume = 0.0f;
     public float RampUpTime = 1;
 
+	public bool isVase = false;
+	public bool isBookShelf = false;
+	public ComputerAudioController computerAudioController = null;
 
 	public string trackName = "monteverdi";
 	public string hostName = "mindatlarge";
@@ -32,6 +35,11 @@ public class TableGazeReceiver : GazeReceiver
         base.Update();
         float volumeDelta = (MaxVolume / RampUpTime) * Time.deltaTime;
 
+		if (isBookShelf)
+			computerAudioController.isBookShelfOn = isGazedOn;
+		if (isVase)
+			computerAudioController.isTableOn = isGazedOn;
+		
         if (isGazedOn)
         {
             currentVolume = Mathf.Min(MaxVolume, currentVolume + volumeDelta);
