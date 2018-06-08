@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class ComputerAudioController : MonoBehaviour
 {
-
+	public string trackName = "monteverdi";
+	public string hostName = "mindatlarge";
+	public RemoteAudioTriggerUdp Audiotrigger;
     public bool isBookShelfOn = false;
     public bool isTableOn = false;
 
@@ -46,11 +48,12 @@ public class ComputerAudioController : MonoBehaviour
             Mathf.Abs(Time.fixedTime - lastVolumeTime) > volumeTimeDelta)
         {
             //Debug.Log("current level set at: " + currentVolume);
-            source.volume = currentVolume;
+            //source.volume = currentVolume;
+			Audiotrigger.setTrackAndVolume(trackName, currentVolume,hostName);
             //todo set volume
             lastVolume = currentVolume;
             lastVolumeTime = Time.fixedTime;
         }
-		Debug.Log(source.time);
+		//Debug.Log(source.time);
 	}
 }
