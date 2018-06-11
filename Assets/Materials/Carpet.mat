@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Carpet
-  m_Shader: {fileID: 4800000, guid: 396b6b18c24d9574f9341c82e4a41712, type: 3}
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -71,7 +71,7 @@ Material:
     - _NormalMapIntensity: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _ScrollXSpeed: 1
+    - _ScrollXSpeed: 0
     - _ScrollYSpeed: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
